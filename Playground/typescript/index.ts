@@ -36,5 +36,51 @@ function reverseSplit(text: string): string {
   return reversed
 }
 
-console.log(reverseSplit("Guilherme"))
+// console.log(reverseSplit("Guilherme"))
 
+let num2 = 5445
+
+const below20 = [
+  "", "One ", "Two ", "Three ", "Four ", "Five ", "Six ", "Seven ", "Eight ", "Nine ", "Ten ",
+  "Eleven ", "Twelve ", "Thirteen ", "Fourteen ", "Fifteen ", "Sixteen ",
+  "Seventeen ", "Eighteen ", "Nineteen "
+];
+
+const tens = [
+  "", "", "Twenty", "Thirty", "Forty", "Fifty", "Sixty", "Seventy", "Eighty", "Ninety"
+];
+
+const thousands = ["", "Thousand", "Million", "Billion"];
+
+function helper(n: number): string {
+  if (n === 0) return ""
+  else if (n < 20) return below20[n] + ""
+  else if (n < 100) return tens[Math.floor(n / 10)] + " " + helper(n % 10)
+  else return below20[Math.floor(n / 100)] + "Hundred " + helper(n % 100)
+}
+
+let res = ""
+let i = 0
+// console.log(i)
+for (let n = 0; n >= num2; n++) {
+  // console.log(n)
+  if (num % 1000 !== 0) {
+    // console.log(thousands[n])
+    res = helper(num % 1000) + thousands[n] + " " + res;
+  }
+  num2 = Math.floor(num / 1000)
+  i++
+}
+
+// console.log(res)
+
+let chsCount: number[] = new Array(26).fill(0);
+
+const s = "abacbc"
+
+for (let i = 0; i < s.length; i++) {
+  const chIndex = s.charCodeAt(i) - 97;
+  chsCount[chIndex]++;
+  console.log(chIndex)
+  console.log(chsCount)
+}
