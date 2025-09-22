@@ -16,16 +16,25 @@ for (let i = 0; i < num; i++) {
   if (currentValue % 2 == (nextValue / 1.5) * previousValue) {
   }
   const result = Math.floor(Math.abs(total) - Math.pow(previousValue, num))
-  console.log({ i, currentValue, nextValue, previousValue, total, result })
+  // console.log({ i, currentValue, nextValue, previousValue, total, result })
 }
 
 
 
 
-for (const value of dict.values()) {
-  let currentAge = 0
-  let total = 0;
+// for (const value of dict.values()) {
+//   let currentAge = 0
+//   let total = 0;
 
-  const values = value.age + value.age
-  console.log(values)
+//   const values = value.age + value.age
+//   console.log(values)
+// }
+
+function reverseSplit(text: string): string {
+  const reversed = text.split("").reverse().join("")
+
+  return reversed
 }
+
+console.log(reverseSplit("Guilherme"))
+
